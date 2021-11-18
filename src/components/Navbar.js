@@ -6,7 +6,7 @@ export const Navbar = () => {
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
             <a className="navbar-brand" href="/">
-                MERN CRUD |
+                CRUD APP|
             </a>
             <button
                 className="navbar-toggler"

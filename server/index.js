@@ -3,7 +3,7 @@ const employeeRoutes = require("./employee")
 const cors = require('cors');
 
 const app = express();
-const port = "2900";
+const port = process.env.PORT || 2900;
 
 app.use(cors());
 app.use(express.json());
