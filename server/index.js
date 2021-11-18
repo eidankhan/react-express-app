@@ -1,6 +1,12 @@
 const express = require('express');
 const employeeRoutes = require("./employee")
 const cors = require('cors');
+const connectoMongodb = require("./db");
+
+// Connect to mongo db
+connectoMongodb();
+
+
 
 const app = express();
 const port = process.env.PORT || 2900;

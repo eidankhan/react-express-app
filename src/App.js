@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Employees } from "./components/Employees";
-import { Navbar } from "./components/Navbar";
 
 function App() {
   const BASE_URL = "http://localhost:2900/api/employees";
@@ -23,10 +22,9 @@ function App() {
 
   
   return (
-    <>
-      <Navbar />
+    <div className="container my-5">
       <Employees employees={employees}/>
-    </>
+    </div>
   );
 }
 

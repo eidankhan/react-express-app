@@ -1,6 +1,29 @@
 const express = require("express");
 const router = express.Router();
 
+const Employee = require("./EmployeeModel");
+
+router.get("/employees", async (req, res) => {
+    const employees = await Employee.find();
+    res.json(employees);
+});
+
+
+router.post("/employees", async (req, res) => {
+    const {name, salary, position} = req.body;
+    const employee = await Employee({
+        name,
+        salary,
+        position,
+    });
+    employee.save();
+    res.json(employee);
+    // const savedEmployee = await employee.save();
+    // res.json(savedEmployee);
+})
+
+
+/*
 const generateUniqeId = () => {
     return Math.floor(Math.random()*10000) 
 }
@@ -21,6 +44,7 @@ let employees = [
 ];
 
 router.get('/employees', (req, res) => {
+    
     res.json(employees);
 })
 
@@ -55,5 +79,5 @@ router.put("/employees/:id", (req, res) => {
     
 })
 
-
+*/
 module.exports = router;
